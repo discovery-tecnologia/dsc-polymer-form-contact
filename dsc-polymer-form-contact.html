@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-textarea.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icons/notification-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-form.html">
+
+<dom-module id="dsc-polymer-form-contact">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+
+      #dsc-form-contact form paper-input iron-icon {
+          color: #666666;
+          margin: 0 5px 5px 0; 
+      }
+
+      .suffix-info {
+          color: #999999; 
+      }
+    </style>
+
+    <div id="dsc-form-contact">
+      <form is="iron-form" id="form" method="post" action="/form/handler">
+        <paper-input name="name" label="Name">
+          <iron-icon icon="account-circle" prefix></iron-icon>
+        </paper-input>
+        <paper-input name="phone" label="Phone">
+          <iron-icon icon="notification:phone-in-talk" prefix></iron-icon>
+        </paper-input>
+        <paper-input name="mail" label="Mail">
+          <iron-icon icon="mail" prefix></iron-icon>
+          <div class="suffix-info" suffix>@email.com</div>
+        </paper-input>
+        <paper-input name="subject" label="Subject">
+          <iron-icon icon="subject" prefix></iron-icon>
+        </paper-input>
+        <paper-textarea name="message" label="Message" rows="5"></paper-textarea>
+        <paper-button raised onclick="submitForm()">Submit</paper-button>
+      </form>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dsc-polymer-form-contact',
+
+      properties: {
+
+        height: {
+          type: String,
+          value: '600px',
+          reflectToAttribute: true,
+          observer: '_onHeightChanged',
+        },
+
+      },
+    });
+  </script>
+
+</dom-module>
