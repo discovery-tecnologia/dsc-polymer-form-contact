@@ -1,49 +1,36 @@
-# dsc-polymer-parallax
+# dsc-polymer-form-contact
 
-[![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-parallax.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-parallax)
-
-Sections with background image with parallax effect when page scrolling.
-
-Custom content.
+Basic and standard form component with Polymer.
 
 ## Demo
 
 ```
-$ git clone https://github.com/discovery-tecnologia/dsc-polymer-parallax.git
-$ cd dsc-polymer-parallax
+$ git clone https://github.com/discovery-tecnologia/dsc-polymer-form-contact.git
+$ cd dsc-polymer-form-contact
 $ npm install
 $ bower install
 $ npm install -g polymer-cli
 $ polymer serve
 ```
-Open browser: http://localhost:8080/components/dsc-polymer-parallax/demo/
+Open browser: http://localhost:8080/components/dsc-polymer-form-contact/demo/
 
 ## Usage
 
 Install with:
 
 ```
-$ bower i https://github.com/discovery-tecnologia/dsc-polymer-parallax.git --save
+$ bower i https://github.com/discovery-tecnologia/dsc-polymer-form-contact.git --save
 ```
 
 Example usage:
 
 ```html
-<dsc-polymer-parallax background="images/img.jpg">
-  <h1>Section title</h1>
-  <p>Nam mattis porta mattis. Donec et neque scelerisque, pretium arcu sed, vehicula diam. Nam a arcu eu sapien porta<br>posuere id id arcu. Fusce rhoncus erat ut nisl pharetra.</p>
-  <a href="#">View more</a>
-</dsc-polymer-parallax>
+<dsc-polymer-form-contact></dsc-polymer-form-contact>
 ```
 
-## API
+## TODO
 
-| Property       | Description                    | Default       |
-|:---------------|--------------------------------|---------------|
-| background     | optional "background" attribute of the section defines the background image. | null |
-
-The content can be any HTML element or other polymer component.
-
-| Custom property |	Description                       | Default |
-|:----------------|-----------------------------------|---------|
-| --dsc-polymer-parallax | Overhide element style     | {}      |
+ * tests
+ * properties
+ * validation
+ * documentation
