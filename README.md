@@ -1,4 +1,4 @@
-# dsc-polymer-form-contact
+# <dsc-polymer-form-contact>
 
 Basic and standard form component with Polymer.
 
@@ -8,7 +8,6 @@ Basic and standard form component with Polymer.
 $ git clone https://github.com/discovery-tecnologia/dsc-polymer-form-contact.git
 $ cd dsc-polymer-form-contact
 $ npm install
-$ bower install
 $ npm install -g polymer-cli
 $ polymer serve
 ```
