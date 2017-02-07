@@ -1,4 +1,4 @@
-# <dsc-polymer-form-contact>
+# &#60;dsc-polymer-form-contact&#62;
 
 Basic and standard form component with Polymer.
 
