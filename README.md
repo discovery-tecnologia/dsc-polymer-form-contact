@@ -18,7 +18,7 @@ Open browser: http://localhost:8080/components/dsc-polymer-form-contact/demo/
 Install with:
 
 ```
-$ bower i https://github.com/discovery-tecnologia/dsc-polymer-form-contact.git --save
+$ bower i dsc-polymer-form-contact --save
 ```
 
 Example usage:
