@@ -37,7 +37,7 @@ Example usage:
 |:---------------|----------------------------------------|---------------|
 | language       | Translate the form messages and labels | en            |
 
-The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated.
+The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
 
 ## TODO
 
