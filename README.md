@@ -1,5 +1,9 @@
 # &#60;dsc-polymer-form-contact&#62;
 
+[![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-contact.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-form-contact)
+![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-contact.svg)
+![](https://img.shields.io/pypi/l/Django.svg)
+
 Basic and standard form component with Polymer.
 
 ## Demo
