@@ -31,6 +31,14 @@ Example usage:
 <dsc-polymer-form-contact></dsc-polymer-form-contact>
 ```
 
+## API
+
+| Property       | Description                            | Default       |
+|:---------------|----------------------------------------|---------------|
+| language       | Translate the form messages and labels | en            |
+
+The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated.
+
 ## TODO
 
  * tests
