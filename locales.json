@@ -18,5 +18,15 @@
       "required_field": "Campo obrigatório!",
       "invalid_phone": "Telefone inválido!",
       "invalid_mail": "E-mail inválido!"
+  },
+  "es": {
+      "label_name": "Nombre",
+      "label_phone": "Teléfono",
+      "label_mail": "Correo electrónico",
+      "label_subject": "Sujeto",
+      "label_message": "Mensaje",
+      "required_field": "Campo obligatorio!",
+      "invalid_phone": "Teléfono no válido!",
+      "invalid_mail": "Correo electrónico no válido!"
   }
 }
