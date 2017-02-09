@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-input/paper-textarea.html">
@@ -33,21 +34,21 @@
 
     <div id="dsc-form-contact">
       <form is="iron-form" method="post" action="/components/dsc-polymer-form-contact/demo/basic.html" id="dscFormContact">
-        <paper-input name="name" label="Name" required auto-validate error-message="Campo obrigatório!">
+        <paper-input name="name" label$="[[localize('label_name')]]" required auto-validate error-message="[[localize('required_field')]]">
           <iron-icon icon="account-circle" prefix></iron-icon>
         </paper-input>
-        <paper-input name="phone" label="Phone" maxlength="15" auto-validate pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" error-message="Telefone inválido!">
+        <paper-input name="phone" label$="[[localize('label_phone')]]" maxlength="15" auto-validate pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" error-message="[[localize('invalid_phone')]]">
           <iron-icon icon="notification:phone-in-talk" prefix></iron-icon>
           <div class="suffix-info" suffix>(00) 00000-0000</div>
         </paper-input>
-        <paper-input name="mail" label="Mail" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="E-mail inválido!">
+        <paper-input name="mail" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="mail" prefix></iron-icon>
           <div class="suffix-info" suffix>@email.com</div>
         </paper-input>
-        <paper-input name="subject" label="Subject" required auto-validate error-message="Campo obrigatório!">
+        <paper-input name="subject" label$="[[localize('label_subject')]]" required auto-validate error-message="[[localize('required_field')]]">
           <iron-icon icon="subject" prefix></iron-icon>
         </paper-input>
-        <paper-textarea name="message" label="Message" rows="5" required error-message="Campo obrigatório!"></paper-textarea>
+        <paper-textarea name="message" label$="[[localize('label_message')]]" rows="5" required error-message="[[localize('required_field')]]"></paper-textarea>
         <paper-button class="dsc-button-submit" raised onclick="_submit(event)">Enviar</paper-button>
       </form>
     </div>
@@ -63,15 +64,21 @@
     Polymer({
       is: 'dsc-polymer-form-contact',
 
+      behaviors: [
+        Polymer.AppLocalizeBehavior
+      ],
+
       properties: {
 
-        height: {
-          type: String,
-          value: '600px',
-          reflectToAttribute: true,
-          observer: '_onHeightChanged',
+        language: {
+          value: 'en',
+          type: String
         },
 
+      },
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('locales.json'));
       },
 
     });

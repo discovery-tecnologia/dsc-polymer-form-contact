@@ -1,0 +1,22 @@
+{
+  "en": {
+    "label_name": "Name",
+    "label_phone": "Phone",
+    "label_mail": "Mail",
+    "label_subject": "Subject",
+    "label_message": "Message",
+    "required_field": "Field required!",
+    "invalid_phone": "Invalid phone!",
+    "invalid_mail": "Invalid mail!"
+  },
+  "br": {
+      "label_name": "Nome",
+      "label_phone": "Telefone",
+      "label_mail": "E-mail",
+      "label_subject": "Assunto",
+      "label_message": "Mensagem",
+      "required_field": "Campo obrigatório!",
+      "invalid_phone": "Telefone inválido!",
+      "invalid_mail": "E-mail inválido!"
+  }
+}
