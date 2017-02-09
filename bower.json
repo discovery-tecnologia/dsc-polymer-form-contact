@@ -1,6 +1,6 @@
 {
   "name": "dsc-polymer-form-contact",
-  "description": "Basic and stardard form",
+  "description": "Default form for contact pages. Includes validation, internationalization, and API endpoint configuration.",
   "authors": [
     "Diego Wagner <diegowagner4@gmail.com>",
     "Andre Luiz Haag <andreluizhaag@gmail.com>"

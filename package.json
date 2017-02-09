@@ -1,5 +1,7 @@
 {
   "name": "dsc-polymer-form-contact",
+  "description": "Default form for contact pages. Includes validation, internationalization, and API endpoint configuration.",
+  "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
     "bower": "latest",

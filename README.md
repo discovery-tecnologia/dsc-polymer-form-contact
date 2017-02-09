@@ -1,6 +1,6 @@
 # &#60;dsc-polymer-form-contact&#62;
 
-[![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-contact.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-form-contact)
+![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-contact.svg?branch=master)
 ![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-contact.svg)
 ![](https://img.shields.io/pypi/l/Django.svg)
 
