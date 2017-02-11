@@ -41,7 +41,8 @@
     "paper-input": "^1.1.23",
     "iron-icon": "^1.0.12",
     "iron-icons": "^1.2.0",
-    "app-localize-behavior": "PolymerElements/app-localize-behavior#^0.10.1"
+    "app-localize-behavior": "PolymerElements/app-localize-behavior#^0.10.1",
+    "iron-ajax": "^1.4.3"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
