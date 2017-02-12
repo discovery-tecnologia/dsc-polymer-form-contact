@@ -76,7 +76,7 @@
 
       behaviors: [
         Polymer.AppLocalizeBehavior,
-        Polymer.IronValidatableBehavior
+        Polymer.IronValidatableBehavior,
       ],
 
       properties: {
@@ -84,46 +84,45 @@
         contact: {
             type: Object,
             value: {
-              "name": "", 
-              "phone": "", 
-              "mail": "", 
-              "subject": "", 
-              "message": ""
+              'name': null,
+              'phone': null,
+              'mail': null,
+              'subject': null,
+              'message': null,
             },
-            notify: true
+            notify: true,
         },
+
         /**
          * Define language tranlated
          * Actual options (en,br,es)
+         * @type String
          */
         language: {
           value: 'en',
-          type: String
+          type: String,
         },
 
+        /**
+         * Define endpoint API
+         * @type String
+         */
         endpoint: {
           type: String,
-          value: "http://localhost:3000/api/contact",
+          value: 'http://localhost:3000/api/contact',
         },
 
-      },
-
-      ready: function() {
-          //this.$.dscFormContactRequest.addEventListener('error', this.handleError);
-          //this.$.dscFormContactRequest.addEventListener('request', this.handleRequestSent);
-          //this.$.dscFormContactRequest.addEventListener('response', this.handleResponseReceived);
       },
 
       /**
        * On click or tap indicators.
        *
-       * @param {object} e Event object.
+       * @param {object} event Event object.
        *
        * @return {undefined}
        */
-      handleSubmit: function (event) {
+      handleSubmit: function(event) {
         var form = Polymer.dom(event).localTarget.parentElement;
-        //console.log(form.serialize());
         if (form.validate()) {
           var request = this.$.ajax;
           request.body = JSON.stringify(form.serialize());
@@ -134,35 +133,37 @@
       /**
        * Handler error requests
        *
-       * @param {object} e Event object.
+       * @param {object} event Event object.
        *
        * @return {undefined}
        */
       _handleError: function(event) {
           this.$.button.disabled = false;
-          var error = event.detail.error;
-          this._showToast(error, "red");
+          var req = event.detail.request;
+          var statusCode = req.status;
+          var message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          this._showToast(message, 'red');
       },
 
       /**
        * Handler requests sent
        *
-       * @param {object} e Request object.
+       * @param {object} request Request object.
        *
        * @return {undefined}
        */
-      _handleRequestSent: function (request) {
+      _handleRequestSent: function(request) {
           this.$.button.disabled = true;
       },
 
       /**
        * Handler responses received
        *
-       * @param {object} e Response object.
+       * @param {object} response Response object.
        *
        * @return {undefined}
        */
-      _handleResponseReceived: function (response) {
+      _handleResponseReceived: function(response) {
           this.$.button.disabled = false;
           this._showToast();
       },
@@ -170,8 +171,8 @@
       /**
        * Show message for user
        *
-       * @param {String} message.
-       * @param {String} override background color toast.
+       * @param {String} message message text.
+       * @param {String} color string override background color toast.
        *
        * @return {undefined}
        */
@@ -179,11 +180,11 @@
           var toast = this.$.toast;
           if(message == null) {
              message = this.localize('success_message');
-          } 
+          }
           toast.text = message;
 
-          this.customStyle['--paper-toast-background-color'] = color == null 
-          ? "green" :
+          this.customStyle['--paper-toast-background-color'] = color == null
+          ? 'green' :
              color;
 
           Polymer.updateStyles();
