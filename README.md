@@ -15,7 +15,7 @@ $ npm install
 $ npm install -g polymer-cli
 $ polymer serve
 ```
-Open browser: http://localhost:8080/components/dsc-polymer-form-contact/demo/
+Open browser: http://localhost:8080/components/dsc-polymer-form-contact/demo/index.html
 
 ## Usage
 
