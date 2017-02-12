@@ -59,7 +59,7 @@
       </form>
 
       <iron-ajax id="ajax" 
-                 url="http://localhost:3000/api/contact" 
+                 url="{{endpoint}}" 
                  content-type="application/json"
                  handle-as="json"
                  method="POST" 
@@ -99,6 +99,11 @@
         language: {
           value: 'en',
           type: String
+        },
+
+        endpoint: {
+          type: String,
+          value: "http://localhost:3000/api/contact",
         },
 
       },

@@ -33,9 +33,10 @@ Example usage:
 
 ## API
 
-| Property       | Description                            | Default       |
-|:---------------|----------------------------------------|---------------|
-| language       | Translate the form messages and labels | en            |
+| Property       | Description                            | Default                           |
+|:---------------|----------------------------------------|-----------------------------------|
+| language       | Translate the form messages and labels | en                                |
+| endpoint       | Endpoint API                           | http://localhost:3000/api/contact |
 
 The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
 
