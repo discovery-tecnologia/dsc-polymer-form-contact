@@ -2,8 +2,10 @@
   "name": "dsc-polymer-form-contact",
   "description": "Default form for contact pages. Includes validation, internationalization, and API endpoint configuration.",
   "authors": [
-    "Diego Wagner <diegowagner4@gmail.com>",
-    "Andre Luiz Haag <andreluizhaag@gmail.com>"
+    {
+      "name": "Diego Wagner",
+      "email": "diegowagner4@gmail.com"
+    }
   ],
   "keywords": [
     "web-components",

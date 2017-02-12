@@ -28,7 +28,7 @@ $ bower i dsc-polymer-form-contact --save
 Example usage:
 
 ```html
-<dsc-polymer-form-contact></dsc-polymer-form-contact>
+<dsc-polymer-form-contact language="br" endpoint="http://my-site/my-api"></dsc-polymer-form-contact>
 ```
 
 ## API
