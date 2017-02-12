@@ -114,9 +114,9 @@
         var form = Polymer.dom(event).localTarget.parentElement;
         //console.log(form.serialize());
         if (form.validate()) {
-          var ironAjax = this.$$("#formContactRequest");
-          ironAjax.body = JSON.stringify(form.serialize());
-          ironAjax.generateRequest();
+          var request = this.$$("#formContactRequest");
+          request.body = JSON.stringify(form.serialize());
+          request.generateRequest();
         }
       },
 
