@@ -7,6 +7,7 @@
 <link rel="import" href="../paper-input/paper-textarea.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../iron-icons/notification-icons.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../iron-form/iron-form.html">
 
@@ -51,10 +52,13 @@
           <iron-icon icon="subject" prefix></iron-icon>
         </paper-input>
         <paper-textarea name="message" value="{{contact.message}}" label$="[[localize('label_message')]]" rows="5" required error-message="[[localize('required_field')]]"></paper-textarea>
-        <paper-button id="dsc-button-submit" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
+        <paper-button id="button" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
+
+        <paper-toast id="toast" class="dsc-toast"></paper-toast>
+
       </form>
 
-      <iron-ajax id="dsc-ajax-form-contact" 
+      <iron-ajax id="ajax" 
                  url="http://localhost:3000/api/contact" 
                  content-type="application/json"
                  handle-as="json"
@@ -116,24 +120,69 @@
         var form = Polymer.dom(event).localTarget.parentElement;
         //console.log(form.serialize());
         if (form.validate()) {
-          var request = this.$$("#dsc-ajax-form-contact");
+          var request = this.$.ajax;
           request.body = JSON.stringify(form.serialize());
           request.generateRequest();
         }
       },
 
+      /**
+       * Handler error requests
+       *
+       * @param {object} e Event object.
+       *
+       * @return {undefined}
+       */
       _handleError: function(event) {
-          this.$$('#dsc-button-submit').disabled = false;
-            //var request=event.detail.request;
-            //var error=event.detail.error;
+          this.$.button.disabled = false;
+          var error = event.detail.error;
+          this._showToast(error, "red");
       },
 
+      /**
+       * Handler requests sent
+       *
+       * @param {object} e Request object.
+       *
+       * @return {undefined}
+       */
       _handleRequestSent: function (request) {
-          this.$$('#dsc-button-submit').disabled = true;
+          this.$.button.disabled = true;
       },
 
+      /**
+       * Handler responses received
+       *
+       * @param {object} e Response object.
+       *
+       * @return {undefined}
+       */
       _handleResponseReceived: function (response) {
-          this.$$('#dsc-button-submit').disabled = false;
+          this.$.button.disabled = false;
+          this._showToast();
+      },
+
+      /**
+       * Show message for user
+       *
+       * @param {String} message.
+       * @param {String} override background color toast.
+       *
+       * @return {undefined}
+       */
+      _showToast: function(message, color) {
+          var toast = this.$.toast;
+          if(message == null) {
+             message = this.localize('success_message');
+          } 
+          toast.text = message;
+
+          this.customStyle['--paper-toast-background-color'] = color == null 
+          ? "green" :
+             color;
+
+          Polymer.updateStyles();
+          toast.show();
       },
 
       attached: function() {

@@ -8,7 +8,8 @@
     "required_field": "Field required!",
     "invalid_phone": "Invalid phone!",
     "invalid_mail": "Invalid mail!",
-    "btn_text": "Send"
+    "btn_text": "Send",
+    "success_message": "Sent with successs!"
   },
   "br": {
       "label_name": "Nome",
@@ -19,7 +20,8 @@
       "required_field": "Campo obrigatório!",
       "invalid_phone": "Telefone inválido!",
       "invalid_mail": "E-mail inválido!",
-      "btn_text": "Enviar"
+      "btn_text": "Enviar",
+      "success_message": "Enviado com sucesso!"
   },
   "es": {
       "label_name": "Nombre",
@@ -30,6 +32,7 @@
       "required_field": "Campo obligatorio!",
       "invalid_phone": "Teléfono no válido!",
       "invalid_mail": "Correo electrónico no válido!",
-      "btn_text": "Enviar"
+      "btn_text": "Enviar",
+      "success_message": "Enviado correctamente!"
   }
 }
