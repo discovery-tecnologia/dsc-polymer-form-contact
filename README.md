@@ -40,7 +40,14 @@ Example usage:
 
 The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
 
+## Test
+
+Check sintax and execute selenium tests.
+
+```
+$ npm test
+```
+
 ## TODO
 
- * tests
- * documentation
+ * more tests
