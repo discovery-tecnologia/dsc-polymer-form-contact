@@ -35,10 +35,16 @@ Example usage:
 
 ## API
 
-| Property       | Description                            | Default                           |
-|:---------------|----------------------------------------|-----------------------------------|
-| language       | Translate the form messages and labels | en                                |
-| endpoint       | Endpoint API                           | http://localhost:3000/api/contact |
+### Property
+| Name     | Type    | Description                           | Default                           |
+|:---------|---------|---------------------------------------|-----------------------------------|
+| language | String  |Translate the form messages and labels | en                                |
+| endpoint | String  |Endpoint API                           | http://localhost:3000/api/contact |
+
+### Events
+| Name             | Description                                                                      |
+|:-----------------|----------------------------------------------------------------------------------|
+| response-success | Listen to the response event ok. Provides the response object to another element.|
 
 The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
 

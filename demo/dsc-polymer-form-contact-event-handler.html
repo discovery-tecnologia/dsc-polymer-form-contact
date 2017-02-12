@@ -1,0 +1,27 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../dsc-polymer-form-contact.html">
+
+<dom-module id="dsc-polymer-form-contact-event-handler">
+  <template>
+
+    <dsc-polymer-form-contact on-response-success="handlerResponse"></dsc-polymer-form-contact>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dsc-polymer-form-contact-event-handler',
+
+      /**
+       * Listen and receive the event object
+       *
+       * @param {object} event Event object.
+       *
+       * @return {undefined}
+       */
+      handlerResponse: function(event) {
+          console.log(event.detail.response);
+      }
+    });
+  </script>
+</dom-module>
