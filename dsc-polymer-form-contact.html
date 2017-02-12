@@ -54,7 +54,7 @@
         <paper-button id="dscButtonSubmit" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
       </form>
 
-      <iron-ajax id="formContactRequest" 
+      <iron-ajax id="dscFormContactRequest" 
                  url="http://localhost:3000/api/contact" 
                  content-type="application/json"
                  handle-as="json"
@@ -98,9 +98,9 @@
       },
 
       ready: function() {
-          this.$.formContactRequest.addEventListener('error', this.handleError);
-          this.$.formContactRequest.addEventListener('request', this.handleRequestSent);
-          this.$.formContactRequest.addEventListener('response', this.handleResponseReceived);
+          this.$.dscFormContactRequest.addEventListener('error', this.handleError);
+          this.$.dscFormContactRequest.addEventListener('request', this.handleRequestSent);
+          this.$.dscFormContactRequest.addEventListener('response', this.handleResponseReceived);
       },
 
       /**
@@ -114,7 +114,7 @@
         var form = Polymer.dom(event).localTarget.parentElement;
         //console.log(form.serialize());
         if (form.validate()) {
-          var request = this.$$("#formContactRequest");
+          var request = this.$$("#dscFormContactRequest");
           request.body = JSON.stringify(form.serialize());
           request.generateRequest();
         }
