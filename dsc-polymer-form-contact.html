@@ -19,7 +19,7 @@
         display: block;
       }
 
-      #dsc-form-contact form paper-input iron-icon {
+      #dsc-container-form-contact form paper-input iron-icon {
           color: #666666;
           margin: 0 5px 5px 0; 
       }
@@ -34,8 +34,8 @@
 
     </style>
 
-    <div id="dsc-form-contact">
-      <form is="iron-form" id="dscFormContact">
+    <div id="dsc-container-form-contact">
+      <form is="iron-form">
         <paper-input name="name" value="{{contact.name}}" label$="[[localize('label_name')]]" required auto-validate error-message="[[localize('required_field')]]">
           <iron-icon icon="account-circle" prefix></iron-icon>
         </paper-input>
@@ -51,15 +51,17 @@
           <iron-icon icon="subject" prefix></iron-icon>
         </paper-input>
         <paper-textarea name="message" value="{{contact.message}}" label$="[[localize('label_message')]]" rows="5" required error-message="[[localize('required_field')]]"></paper-textarea>
-        <paper-button id="dscButtonSubmit" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
+        <paper-button id="dsc-button-submit" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
       </form>
 
-      <iron-ajax id="dscFormContactRequest" 
+      <iron-ajax id="dsc-ajax-form-contact" 
                  url="http://localhost:3000/api/contact" 
                  content-type="application/json"
                  handle-as="json"
                  method="POST" 
-                 on-error="handleError"></iron-ajax>
+                 on-error="_handleError"
+                 on-request="_handleRequestSent"
+                 on-response="_handleResponseReceived"></iron-ajax>
 
     </div>
   </template>
@@ -98,9 +100,9 @@
       },
 
       ready: function() {
-          this.$.dscFormContactRequest.addEventListener('error', this.handleError);
-          this.$.dscFormContactRequest.addEventListener('request', this.handleRequestSent);
-          this.$.dscFormContactRequest.addEventListener('response', this.handleResponseReceived);
+          //this.$.dscFormContactRequest.addEventListener('error', this.handleError);
+          //this.$.dscFormContactRequest.addEventListener('request', this.handleRequestSent);
+          //this.$.dscFormContactRequest.addEventListener('response', this.handleResponseReceived);
       },
 
       /**
@@ -114,24 +116,24 @@
         var form = Polymer.dom(event).localTarget.parentElement;
         //console.log(form.serialize());
         if (form.validate()) {
-          var request = this.$$("#dscFormContactRequest");
+          var request = this.$$("#dsc-ajax-form-contact");
           request.body = JSON.stringify(form.serialize());
           request.generateRequest();
         }
       },
 
-      handleError: function(event) {
-            //this.$$('#dscButtonSubmit').disabled=false;
+      _handleError: function(event) {
+          this.$$('#dsc-button-submit').disabled = false;
             //var request=event.detail.request;
             //var error=event.detail.error;
       },
-      handleRequestSent: function (request) {
-          //console.log("boooooo");
-          //this.$$('#dscButtonSubmit').disabled=true;
+
+      _handleRequestSent: function (request) {
+          this.$$('#dsc-button-submit').disabled = true;
       },
-      handleResponseReceived: function (response) {
-          //this.$$('#dscButtonSubmit').disabled=false;
-          //console.log("Received response: " + JSON.stringify(response.detail.response));
+
+      _handleResponseReceived: function (response) {
+          this.$$('#dsc-button-submit').disabled = false;
       },
 
       attached: function() {
