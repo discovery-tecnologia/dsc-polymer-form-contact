@@ -4,7 +4,9 @@
 ![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-contact.svg)
 ![](https://img.shields.io/pypi/l/Django.svg)
 
-Basic and standard form component with Polymer.
+Basic and standard form component with Polymer. This project use Google Material Design.
+
+![demo](https://raw.githubusercontent.com/discovery-tecnologia/dsc-polymer-form-contact/master/docs/img/form.png)
 
 ## Demo
 
