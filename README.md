@@ -43,6 +43,4 @@ The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form
 ## TODO
 
  * tests
- * properties
- * validation
  * documentation
