@@ -5,12 +5,19 @@
   <template>
 
     <dsc-polymer-form-contact on-response-success="handlerResponse"></dsc-polymer-form-contact>
+    <h1>{{ret}}</h1>
 
   </template>
 
   <script>
     Polymer({
       is: 'dsc-polymer-form-contact-event-handler',
+
+      properties: {
+        ret: {
+          type: Object,
+        },
+      },
 
       /**
        * Listen and receive the event object
@@ -20,8 +27,8 @@
        * @return {undefined}
        */
       handlerResponse: function(event) {
-          console.log(event.detail.response);
-      }
+         this.ret = JSON.stringify(event.detail.detail.response);
+      },
     });
   </script>
 </dom-module>
