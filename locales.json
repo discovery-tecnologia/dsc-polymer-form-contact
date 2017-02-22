@@ -9,7 +9,8 @@
     "invalid_phone": "Invalid phone!",
     "invalid_mail": "Invalid mail!",
     "btn_text": "Send",
-    "success_message": "Sent with successs!"
+    "success_message": "Sent with successs!",
+    "server_offline": "Offline server"
   },
   "br": {
       "label_name": "Nome",
@@ -21,7 +22,8 @@
       "invalid_phone": "Telefone inválido!",
       "invalid_mail": "E-mail inválido!",
       "btn_text": "Enviar",
-      "success_message": "Enviado com sucesso!"
+      "success_message": "Enviado com sucesso!",
+      "server_offline": "Servidor offline"
   },
   "es": {
       "label_name": "Nombre",
@@ -33,6 +35,7 @@
       "invalid_phone": "Teléfono no válido!",
       "invalid_mail": "Correo electrónico no válido!",
       "btn_text": "Enviar",
-      "success_message": "Enviado correctamente!"
+      "success_message": "Enviado correctamente!",
+      "server_offline": "Servidor sin conexión"
   }
 }

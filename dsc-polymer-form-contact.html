@@ -159,7 +159,12 @@
           this.$.button.disabled = false;
           var req = event.detail.request;
           var statusCode = req.status;
-          var message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          var message = '';
+          if(statusCode == 0) {
+            message = this.localize('server_offline');
+          } else {
+            message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          }
           this._showToast(message, 'red');
       },
 
