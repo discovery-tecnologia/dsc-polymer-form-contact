@@ -2,7 +2,7 @@
   "en": {
     "label_name": "Name",
     "label_phone": "Phone",
-    "label_mail": "Mail",
+    "label_mail": "Email",
     "label_subject": "Subject",
     "label_message": "Message",
     "required_field": "Field required!",

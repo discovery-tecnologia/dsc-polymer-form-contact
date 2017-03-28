@@ -62,7 +62,7 @@
           <iron-icon icon="notification:phone-in-talk" prefix></iron-icon>
           <div class="suffix-info" suffix>(00) 00000-0000</div>
         </paper-input>
-        <paper-input name="mail" value="{{contact.mail}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
+        <paper-input name="email" value="{{contact.email}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="mail" prefix></iron-icon>
           <div class="suffix-info" suffix>@email.com</div>
         </paper-input>
@@ -104,7 +104,7 @@
             value: {
               'name': '',
               'phone': '',
-              'mail': '',
+              'email': '',
               'subject': '',
               'message': '',
             },
