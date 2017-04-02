@@ -64,7 +64,6 @@
         </paper-input>
         <paper-input name="email" value="{{contact.email}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="mail" prefix></iron-icon>
-          <div class="suffix-info" suffix>@email.com</div>
         </paper-input>
         <paper-input name="subject" value="{{contact.subject}}" label$="[[localize('label_subject')]]" required auto-validate error-message="[[localize('required_field')]]">
           <iron-icon icon="subject" prefix></iron-icon>
