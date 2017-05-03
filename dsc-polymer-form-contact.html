@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
 <link rel="import" href="../iron-validatable-behavior/iron-validatable-behavior.html">
 <link rel="import" href="../iron-ajax/iron-ajax.html">
 <link rel="import" href="../paper-button/paper-button.html">
@@ -52,7 +53,7 @@
     </style>
 
     <div id="dsc-container-form-contact">
-      <form is="iron-form">
+      <form is="iron-form" id="formContact">
         <paper-input name="name" value="{{contact.name}}" label$="[[localize('label_name')]]" required auto-validate error-message="[[localize('required_field')]]">
           <iron-icon icon="form-contact-icons:account-circle" prefix></iron-icon>
         </paper-input>
@@ -67,7 +68,7 @@
           <iron-icon icon="form-contact-icons:subject" prefix></iron-icon>
         </paper-input>
         <paper-textarea name="message" value="{{contact.message}}" label$="[[localize('label_message')]]" rows="5" required error-message="[[localize('required_field')]]"></paper-textarea>
-        <paper-button id="button" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
+        <paper-button id="button" class="dsc-button-submit" raised on-tap="_onSubmit">[[localize('btn_text')]]</paper-button>
 
         <paper-toast id="toast" class="dsc-toast"></paper-toast>
 
@@ -92,6 +93,7 @@
       behaviors: [
         Polymer.AppLocalizeBehavior,
         Polymer.IronValidatableBehavior,
+        Polymer.IronA11yKeysBehavior,
       ],
 
       properties: {
@@ -99,11 +101,11 @@
         contact: {
             type: Object,
             value: {
-              'name': '',
-              'phone': '',
-              'email': '',
-              'subject': '',
-              'message': '',
+              name: '',
+              phone: '',
+              email: '',
+              subject: '',
+              message: '',
             },
             notify: true,
         },
@@ -127,6 +129,21 @@
           value: 'http://localhost:3000/api/contact',
         },
 
+        /**
+         * Event Target used
+         * @type Object
+         */
+        keyEventTarget: {
+          type: Object,
+          value: function() {
+            return document.body;
+          },
+        },
+
+      },
+
+      keyBindings: {
+        'enter': '_onSubmit',
       },
 
       /**
@@ -136,8 +153,8 @@
        *
        * @return {undefined}
        */
-      handleSubmit: function(event) {
-        var form = Polymer.dom(event).localTarget.parentElement;
+      _onSubmit: function(event) {
+        var form = this.$.formContact;
         if (form.validate()) {
           var request = this.$.ajax;
           request.body = JSON.stringify(form.serialize());
