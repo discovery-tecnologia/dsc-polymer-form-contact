@@ -43,6 +43,14 @@ Example usage:
 | language | String  |Translate the form messages and labels | en                                |
 | endpoint | String  |Endpoint API                           | http://localhost:3000/api/contact |
 
+
+## Styling
+
+| Custom property |	Description                                        | Default |
+|:----------------------|----------------------------------------------|---------|
+| --button-max-width    | Max width button                             | 100%    |
+| --button-align        | Align button in form (left/right)            | center  |
+
 ### Events
 | Name             | Description                                                                      |
 |:-----------------|----------------------------------------------------------------------------------|
