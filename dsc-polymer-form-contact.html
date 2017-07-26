@@ -203,6 +203,13 @@
        */
       _handleResponseReceived: function(response) {
           this.$.button.disabled = false;
+          this.contact = {
+            name: null,
+            phone: null,
+            email: null,
+            subject: null,
+            message: null,
+          };
           this.fire('response-success', response);
           this._showToast();
       },
