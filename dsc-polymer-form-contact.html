@@ -63,17 +63,17 @@
 
     <div id="dsc-container-form-contact">
       <form is="iron-form" id="formContact">
-        <paper-input name="name" value="{{contact.name}}" label$="[[localize('label_name')]]" required auto-validate error-message="[[localize('required_field')]]">
+        <paper-input name="name" value="{{contact.name}}" label$="[[localize('label_name')]]" required error-message="[[localize('required_field')]]">
           <iron-icon icon="form-contact-icons:account-circle" prefix></iron-icon>
         </paper-input>
-        <paper-input name="phone" value="{{contact.phone}}" label$="[[localize('label_phone')]]" maxlength="15" auto-validate pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" error-message="[[localize('invalid_phone')]]">
+        <paper-input name="phone" value="{{contact.phone}}" label$="[[localize('label_phone')]]" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" error-message="[[localize('invalid_phone')]]">
           <iron-icon icon="form-contact-icons:phone-in-talk" prefix></iron-icon>
           <div class="suffix-info" suffix>(00) 00000-0000</div>
         </paper-input>
-        <paper-input name="email" value="{{contact.email}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
+        <paper-input name="email" value="{{contact.email}}" label$="[[localize('label_mail')]]" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="form-contact-icons:mail" prefix></iron-icon>
         </paper-input>
-        <paper-input name="subject" value="{{contact.subject}}" label$="[[localize('label_subject')]]" required auto-validate error-message="[[localize('required_field')]]">
+        <paper-input name="subject" value="{{contact.subject}}" label$="[[localize('label_subject')]]" required error-message="[[localize('required_field')]]">
           <iron-icon icon="form-contact-icons:subject" prefix></iron-icon>
         </paper-input>
         <paper-textarea name="message" value="{{contact.message}}" label$="[[localize('label_message')]]" rows="5" required error-message="[[localize('required_field')]]"></paper-textarea>
