@@ -46,10 +46,12 @@ Example usage:
 
 ## Styling
 
-| Custom property |	Description                                        | Default |
-|:----------------------|----------------------------------------------|---------|
-| --button-max-width    | Max width button                             | 100%    |
-| --button-align        | Align button in form (left/right)            | center  |
+| Custom property |	Description                                 | Default |
+|:--------------------------|-----------------------------------|---------|
+| --button-max-width        | Max width button                  | 100%    |
+| --button-align            | Align button in form (left/right) | center  |
+| --button-background-color | Background color button           | 100%    |
+| --button-font-color       | Text font color button            | center  |
 
 ### Events
 | Name             | Description                                                                      |
